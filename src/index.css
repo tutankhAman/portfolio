@@ -2,4 +2,5 @@ body {
     background-color: rgb(20, 20, 20);
 }
 
-@import url('./components/navbar.css')
+@import url('./components/navbar.css');
+@import url('./components/homepage/homepage.css');

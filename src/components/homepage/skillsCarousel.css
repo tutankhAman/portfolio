@@ -1,0 +1,41 @@
+.skills-carousel {
+    height: calc(100% - 7rem);
+    overflow: hidden;
+    position: relative;
+    margin: 0 1.2rem;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+
+.skills-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    animation: scroll 20s linear infinite;
+    padding: 0.6rem 0;}
+
+.skill-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.skill-logo:hover {
+    opacity: 1;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.skills-carousel:hover .skills-slide {
+    animation-play-state: paused;
+}
+

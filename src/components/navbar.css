@@ -4,11 +4,12 @@
     border-width: 1px;
     border-radius: 0.7rem;
     width: 50vw;
+    max-width: 800px;
     margin:auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 2.2rem;
+    height: 2.7rem;
     font-family: "Source Sans 3", serif;
     font-weight: 600;
     background: rgba(35, 35, 35, 0.6); 
