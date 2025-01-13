@@ -12,11 +12,11 @@
     flex-direction: column;
     gap: 1.2rem;
     animation: scroll 20s linear infinite;
-    padding: 0.6rem 0;}
+    padding: 1rem 0;}
 
 .skill-logo {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     opacity: 0.9;
     transition: opacity 0.3s;
