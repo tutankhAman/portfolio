@@ -3,6 +3,8 @@
     border:1px solid grey;
     margin-top:0.7rem;
     border-radius:1rem;
+    background: linear-gradient(40deg, #191919, #3e3e3e);
+
 }
 
 .project-container>.title {
@@ -12,4 +14,22 @@
     font-weight: 900;
     margin: 0.7rem 1rem 0rem 1rem;
     color:rgb(253, 253, 253);
+}
+
+.project-container .title::after {
+    content: ""; 
+    display: block; 
+    width: 200%;
+    height: 2px; 
+    background: transparent; 
+    border-bottom: 1px dashed rgb(73, 73, 73); 
+    margin: 0.5rem 0.1rem;
+}
+
+.projects-info {
+    color: white;
+    font-family: "Source Sans 3", sans-serif;
+    width: 80%;
+    margin: 0rem 2rem;
+    font-size: 0.99rem;
 }
