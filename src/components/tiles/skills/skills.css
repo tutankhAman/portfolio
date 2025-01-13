@@ -4,6 +4,8 @@
     border-radius: 1rem;
     background: linear-gradient(120deg, #191919, #3e3e3e);
     overflow: hidden; /* Add this to hide overflow */
+    cursor: pointer; /* Add pointer cursor */
+    transition: transform 0.2s ease; /* Add smooth transform animation */
 }
 .skills>.title{
     font-size: 5rem;
@@ -21,4 +23,136 @@
     background: transparent; 
     border-bottom: 1px dashed rgb(119, 119, 119); 
     margin: 0.5rem 0.1rem;
+}
+
+.skills:hover {
+    transform: scale(1.01); /* Slight scale effect on hover */
+}
+
+/* Popup styles */
+.skills-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.skills-popup-overlay.closing {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+.skills-popup {
+    width: 80vw;
+    max-width: 1500px;
+    height: 86vh;
+    max-height: 1080px;
+    background: linear-gradient(120deg, #191919fa, #3e3e3efa);
+    border-radius: 1rem;
+    border: 1px solid #CACACA;
+    position: relative;
+    animation: expandFromSkills 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform-origin: var(--skills-left) var(--skills-top);
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes expandFromSkills {
+    0% {
+        position: fixed;
+        top: var(--skills-top);
+        left: var(--skills-left);
+        width: var(--skills-width);
+        height: var(--skills-height);
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 86vh;
+        opacity: 1;
+    }
+}
+
+/* Closing animation */
+.skills-popup.closing {
+    animation: collapseToSkills 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes collapseToSkills {
+    0% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 86vh;
+        opacity: 1;
+    }
+    100% {
+        position: fixed;
+        top: var(--skills-top);
+        left: var(--skills-left);
+        width: var(--skills-width);
+        height: var(--skills-height);
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.title {
+    color: white;
+    font-size: 7rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
 }

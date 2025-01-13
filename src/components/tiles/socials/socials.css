@@ -6,6 +6,11 @@
     background-image: url('/public/images/backgrounds/garden-flowers.gif');
     background-size: cover;
     background-position: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.socials:hover {
+    transform: scale(1.01);
 }
 .socials>.title{
     font-size: 4rem;
@@ -35,7 +40,6 @@
 .social-logo {
     width: 70px;
     margin: 0.3rem 0.8rem;  
-    box-shadow: 0 4px 15px rgba(96, 96, 96, 0.5);
 
 }
 .discord {
@@ -50,4 +54,124 @@
 .social-links a:hover .social-logo {
     transform: scale(1.1); /* Scale up the logo on hover */
     transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Popup styles */
+.socials-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.socials-popup-overlay.closing {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+.socials-popup {
+    width: 80vw;
+    max-width: 1500px;
+    height: 86vh;
+    max-height: 1080px;
+    background: linear-gradient(120deg, #191919fa, #3e3e3efa);
+    border-radius: 1rem;
+    border: 1px solid #CACACA;
+    position: relative;
+    animation: expandFromSocials 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform-origin: var(--socials-left) var(--socials-top);
+}
+
+.socials-popup.closing {
+    animation: collapseToSocials 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes expandFromSocials {
+    0% {
+        position: fixed;
+        top: var(--socials-top);
+        left: var(--socials-left);
+        width: var(--socials-width);
+        height: var(--socials-height);
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 86vh;
+        opacity: 1;
+    }
+}
+
+@keyframes collapseToSocials {
+    0% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 86vh;
+        opacity: 1;
+    }
+    100% {
+        position: fixed;
+        top: var(--socials-top);
+        left: var(--socials-left);
+        width: var(--socials-width);
+        height: var(--socials-height);
+        opacity: 1;
+        transform: scale(1);
+    }
 }

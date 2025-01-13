@@ -4,7 +4,12 @@
     margin-top:0.7rem;
     border-radius:1rem;
     background: linear-gradient(40deg, #191919, #3e3e3e);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
 
+.project-container:hover {
+    transform: scale(1.01);
 }
 
 .project-container>.title {
@@ -32,4 +37,124 @@
     width: 80%;
     margin: 0rem 2rem;
     font-size: 1.2rem;
+}
+
+/* Popup styles */
+.projects-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.projects-popup-overlay.closing {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+.projects-popup {
+    width: 80vw;
+    max-width: 1500px;
+    height: 86vh;
+    max-height: 1080px;
+    background: linear-gradient(40deg, #191919fa, #3e3e3efa);
+    border-radius: 1rem;
+    border: 1px solid #CACACA;
+    position: relative;
+    animation: expandFromProjects 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform-origin: var(--projects-left) var(--projects-top);
+}
+
+.projects-popup.closing {
+    animation: collapseToProjects 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(8px);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes expandFromProjects {
+    0% {
+        position: fixed;
+        top: var(--projects-top);
+        left: var(--projects-left);
+        width: var(--projects-width);
+        height: var(--projects-height);
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 86vh;
+        opacity: 1;
+    }
+}
+
+@keyframes collapseToProjects {
+    0% {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80vw;
+        height: 86vh;
+        opacity: 1;
+    }
+    100% {
+        position: fixed;
+        top: var(--projects-top);
+        left: var(--projects-left);
+        width: var(--projects-width);
+        height: var(--projects-height);
+        opacity: 1;
+        transform: scale(1);
+    }
 }
