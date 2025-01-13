@@ -1,9 +1,9 @@
 .socials {
-    margin-top: 4%;
+    margin-top: 0.7rem;
     height: 39%;
     border:1px solid #CACACA;
     border-radius: 1rem;
-    background-image: url('/public/images/backgrounds/social2.jpg');
+    background-image: url('/public/images/backgrounds/garden-flowers.gif');
     background-size: cover;
     background-position: center;
 }

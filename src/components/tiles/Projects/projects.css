@@ -1,0 +1,15 @@
+.project-container {
+    height:53%;
+    border:1px solid grey;
+    margin-top:0.7rem;
+    border-radius:1rem;
+}
+
+.project-container>.title {
+    font-family: 'Lexend';
+    font-size: 3.2rem;
+    width: 7rem;
+    font-weight: 900;
+    margin: 0.7rem 1rem 0rem 1rem;
+    color:rgb(253, 253, 253);
+}

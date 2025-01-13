@@ -6,4 +6,5 @@ body {
 @import url('./components/homepage/homepage.css');
 @import url('./components/tiles/skills/skills.css');
 @import url('./components/tiles/socials/socials.css');
-@import url('./components/tiles/intro/intro.css')
+@import url('./components/tiles/intro/intro.css');
+@import url(./components/tiles/Projects/projects.css);

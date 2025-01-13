@@ -2,6 +2,7 @@ import React from 'react'
 import Skills from '../tiles/skills/Skills';
 import Socials from '../tiles/socials/Socials';
 import Intro from '../tiles/intro/Intro';
+import Projects from '../tiles/Projects/Projects';
 
 
 const Homepage = () => {
@@ -16,7 +17,7 @@ const Homepage = () => {
                 </div>
                 <div className='middle-container'>
                     <Intro />
-                    <div className='my-projects'></div>
+                    <Projects />
                 </div>
                 <div className='right-container'>
                     <div className='about'></div>
