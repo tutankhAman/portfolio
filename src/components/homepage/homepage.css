@@ -25,7 +25,7 @@
 }
 
 .pedro {
-    width: 70%;
+    width: 80%;
     aspect-ratio: 1; /* Set width to 100% of the parent container */
     border-radius: 50%; /* Make it a circle */
     overflow: hidden; /* Ensure content does not overflow */

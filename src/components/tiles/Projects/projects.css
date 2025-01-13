@@ -9,7 +9,7 @@
 
 .project-container>.title {
     font-family: 'Lexend';
-    font-size: 3.2rem;
+    font-size: 6rem;
     width: 7rem;
     font-weight: 900;
     margin: 0.7rem 1rem 0rem 1rem;
@@ -31,5 +31,5 @@
     font-family: "Source Sans 3", sans-serif;
     width: 80%;
     margin: 0rem 2rem;
-    font-size: 0.99rem;
+    font-size: 1.2rem;
 }
