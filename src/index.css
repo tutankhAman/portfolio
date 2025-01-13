@@ -2,5 +2,8 @@ body {
     background-color: rgb(20, 20, 20);
 }
 
-@import url('./components/navbar.css');
+@import url('./components/navbar/navbar.css');
 @import url('./components/homepage/homepage.css');
+@import url('./components/tiles/skills/skills.css');
+@import url('./components/tiles/socials/socials.css');
+@import url('./components/tiles/intro/intro.css')

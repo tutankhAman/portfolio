@@ -1,0 +1,52 @@
+.socials {
+    margin-top: 4%;
+    height: 39%;
+    border:1px solid #CACACA;
+    border-radius: 1rem;
+    background-image: url('/public/images/backgrounds/social2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.socials>.title{
+    font-size: 2.5rem;
+    color: rgb(39, 39, 39);
+    font-weight: 700;
+    font-family: "Lexend", sans-serif;
+    margin: 0.9rem 1.2rem;
+
+}
+.socials .title::after {
+    content: ""; 
+    display: block; 
+    width: 60%;
+    height: 2px; 
+    background: transparent; 
+    border-bottom: 1px dashed rgb(73, 73, 73); 
+    margin: 0.5rem 0.1rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    width: 65%;
+    margin: auto;
+}
+.social-logo {
+    width: 40px;
+    margin: 0.3rem 0.8rem;  
+    box-shadow: 0 4px 15px rgba(96, 96, 96, 0.5);
+
+}
+.discord {
+    width: 50px;
+    height: 35px
+}
+.social-links a {
+    display: inline-block; 
+}
+
+.social-links a:hover .social-logo {
+    transform: scale(1.1); /* Scale up the logo on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
