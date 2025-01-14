@@ -34,7 +34,11 @@ const Homepage = () => {
                     <div className='right-container'>
                         <AboutMe />
                         <MiniProjects />
-                        <div className='pedro' onClick={togglePokemon}></div>
+                        <div className='pedro-container'>
+                            <div className='click-here'>Click here!</div>
+                            <div className='curved-arrow'></div>
+                            <div className='pedro' onClick={togglePokemon}></div>
+                        </div>
                     </div>
                 </div>
             )}
