@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .social-item:hover {
@@ -98,16 +99,100 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .social-links-container {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
     .social-item {
-        padding: 1.5rem;
+        padding: 1rem 1.5rem;
     }
-    
+
+    .social-icon-wrapper {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .social-content {
+        gap: 1rem;
+    }
+
     .social-platform {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .social-username {
+        font-size: 0.8rem;
+    }
+
+    .visit-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-links-container {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .social-item {
+        padding: 0.8rem 1rem;
+    }
+
+    .social-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .social-content {
+        gap: 0.8rem;
+    }
+
+    .social-platform {
+        font-size: 1rem;
+    }
+
+    .social-username {
+        font-size: 0.75rem;
+    }
+
+    .visit-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* Add smooth transition for all devices */
+.social-item {
+    /* existing styles */
+    transition: all 0.3s ease;
+}
+
+/* Optimize hover effects for touch devices */
+@media (hover: hover) {
+    .social-item:hover {
+        transform: translateY(-5px);
+    }
+}
+
+@media (hover: none) {
+    .social-item:active {
+        transform: translateY(-2px);
     }
     
-    .social-username {
-        font-size: 0.9rem;
+    .visit-text {
+        opacity: 1;
+        transform: none;
     }
 }
