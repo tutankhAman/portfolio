@@ -1,13 +1,9 @@
-
-  
-  
-  
   .game-container {
     width: 90%;
     height: 90%;
     max-width: 1000px;
     max-height: 600px;
-    margin: 10rem auto;
+    margin: 2rem auto;
     position: relative;
     background: url('https://images6.alphacoders.com/129/thumb-1920-1293302.jpg') no-repeat center center;
     background-size: cover;
@@ -297,4 +293,143 @@
   .message-box.visible {
     opacity: 1;
     pointer-events: auto;
+}
+@media (max-width: 768px) {
+  .game-container {
+      width: 95%;
+      height: 95vh;
+      margin: 1rem auto;
+      box-shadow: 
+          0 0 0 2px #000,
+          0 0 0 4px #fff,
+          0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  .pokemon {
+      width: 10rem;
+      height: 10rem;
+      margin-top: 50px;
+  }
+
+  .health-bars {
+      top: 10px;
+      padding: 0 10px;
+  }
+
+  .pokemon-status {
+      padding: 5px;
+  }
+
+  .pokemon-name {
+      font-size: 10px;
+  }
+
+  .health-bar {
+      width: 120px;
+      height: 15px;
+  }
+
+  .controls {
+      padding: 10px;
+      gap: 5px;
+  }
+
+  .controls button {
+      padding: 8px;
+      font-size: 8px;
+  }
+
+  .message-box {
+      font-size: 12px;
+      padding: 10px 15px;
+  }
+}
+
+/* For even smaller screens */
+@media (max-width: 480px) {
+  .game-container {
+      width: 98%;
+      height: 80vh;
+      margin: 1rem auto;
+  }
+
+  .battle-scene {
+      height: 60%;
+      padding: 10px;
+  }
+
+  .pokemon {
+      width: 8rem;
+      height: 8rem;
+      margin-top: 30px;
+  }
+
+  .health-bar {
+      width: 100px;
+      height: 12px;
+  }
+
+  .controls {
+      grid-template-columns: repeat(2, 1fr); /* 2x2 grid for buttons */
+      grid-template-rows: repeat(2, 1fr);
+      gap: 8px;
+      padding: 8px;
+  }
+
+  .controls button {
+      padding: 12px 8px; /* Increased padding for better touch targets */
+      font-size: 8px;
+  }
+
+  .message-box {
+      width: 80%;
+      font-size: 10px;
+      padding: 8px 12px;
+  }
+}
+
+/* Handle landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .game-container {
+      height: 98vh;
+      margin: 0.5rem auto;
+  }
+
+  .battle-scene {
+      height: 50%;
+  }
+
+  .pokemon {
+      width: 7rem;
+      height: 7rem;
+      margin-top: 20px;
+  }
+
+  .controls {
+      padding: 5px;
+  }
+
+  .controls button {
+      padding: 5px;
+      font-size: 7px;
+  }
+}
+
+/* Adjust animations for mobile */
+@media (max-width: 768px) {
+  @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+  }
+
+  @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+  }
+
+  @keyframes attack {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(15px); }
+      100% { transform: translateX(0); }
+  }
 }
