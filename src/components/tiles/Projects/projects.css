@@ -212,6 +212,13 @@
             height: 95vh;
         }
     }
+    .project-container .title::after {
+        content: ""; 
+        width: 40%;
+        background: transparent; 
+        border-bottom: 1px dashed rgb(73, 73, 73); 
+        margin: 0.5rem 0.1rem;
+    }
 }
 @media (max-width: 1400px) {
     .project-container>.title {
