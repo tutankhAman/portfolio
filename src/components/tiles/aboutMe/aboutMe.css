@@ -250,3 +250,50 @@
         margin-bottom: 1rem;
     }
 }
+
+/* Add to the media query section */
+@media (max-width: 768px) {
+    .about-popup {
+        width: 95vw;
+        height: 95vh;
+        margin: 0;
+    }
+
+    .about-popup-title {
+        font-size: 3rem;
+        padding: 1.5rem;
+    }
+
+    .about-popup-content {
+        flex-direction: column;
+        padding: 0 1.5rem;
+    }
+
+    .about-popup-left {
+        padding-left: 0;
+        font-size: 1rem;
+    }
+
+    .about-popup-right {
+        margin-right: 0;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    @keyframes expandFromAbout {
+        100% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+
+    @keyframes collapseToAbout {
+        0% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+}

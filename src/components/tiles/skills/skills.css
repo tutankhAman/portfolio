@@ -173,3 +173,30 @@
         height:5rem;
     }
 }
+/* Add to the media query section */
+@media (max-width: 768px) {
+    .skills-popup {
+        width: 95vw;
+        height: 95vh;
+        margin: 0;
+    }
+
+    .skills-popup-title {
+        font-size: 3rem;
+        padding: 1.5rem;
+    }
+
+    @keyframes expandFromSkills {
+        100% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+
+    @keyframes collapseToSkills {
+        0% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+}

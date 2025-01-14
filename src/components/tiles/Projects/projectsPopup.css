@@ -143,3 +143,23 @@
     padding-left: 1rem;
     margin: 1.5rem 0;
 }
+@media (max-width: 768px) {
+    .projects-grid {
+        max-height: calc(95vh - 10rem);
+        padding: 0 1rem 1rem 1rem;
+        gap: 1rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-description {
+        margin-bottom: 1rem;
+    }
+
+    .features-list {
+        margin-bottom: 1rem;
+    }
+}

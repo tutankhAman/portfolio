@@ -157,3 +157,30 @@
 
 
 }
+/* Add to the bottom of the file */
+@media (max-width: 768px) {
+    .mini-projects-popup {
+        width: 95vw;
+        height: 95vh;
+        margin: 0;
+    }
+
+    .miniProjects-popup-title {
+        font-size: 3rem;
+        padding: 1.5rem;
+    }
+
+    @keyframes expandFromMiniProjects {
+        100% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+
+    @keyframes collapseToMiniProjects {
+        0% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+}

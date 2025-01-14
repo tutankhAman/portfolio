@@ -191,3 +191,31 @@
 
     
 }
+
+/* Add to the media query section */
+@media (max-width: 768px) {
+    .socials-popup {
+        width: 95vw;
+        height: 95vh;
+        margin: 0;
+    }
+
+    .socials-popup-title {
+        font-size: 3rem;
+        padding: 1.5rem;
+    }
+
+    @keyframes expandFromSocials {
+        100% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+
+    @keyframes collapseToSocials {
+        0% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+}

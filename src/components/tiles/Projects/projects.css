@@ -186,3 +186,30 @@
         margin: 1rem;
     }
 }
+/* Add to the media query section */
+@media (max-width: 768px) {
+    .projects-popup {
+        width: 95vw;
+        height: 95vh;
+        margin: 0;
+    }
+
+    .projects-popup-title {
+        font-size: 3rem;
+        padding: 1.5rem;
+    }
+
+    @keyframes expandFromProjects {
+        100% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+
+    @keyframes collapseToProjects {
+        0% {
+            width: 95vw;
+            height: 95vh;
+        }
+    }
+}
