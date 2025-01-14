@@ -1,0 +1,300 @@
+
+  
+  
+  
+  .game-container {
+    width: 90%;
+    height: 90%;
+    max-width: 1000px;
+    max-height: 600px;
+    margin: 10rem auto;
+    position: relative;
+    background: url('https://images6.alphacoders.com/129/thumb-1920-1293302.jpg') no-repeat center center;
+    background-size: cover;
+    border: 4px solid #fff;
+    box-shadow: 
+      0 0 0 4px #000,
+      0 0 0 8px #fff,
+      0 0 20px rgba(255, 255, 255, 0.5);
+    image-rendering: pixelated;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Press Start 2P', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    background-color: #1a1a1a;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    
+  }
+  
+  .health-bars {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  
+  .pokemon-status {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border: 2px solid #fff;
+  }
+  
+  .pokemon-name {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  
+  .battle-scene {
+    width: 100%;
+    height: 65%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .pokemon {
+    width: 15rem;
+    height: 15rem;
+    margin-top:100px;
+    position: relative;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
+  }
+  
+  .pokemon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  }
+  
+  .pokemon.charizard {
+    align-self: flex-start;
+    animation: float 3s infinite;
+  }
+  
+  .pokemon.pikachu {
+    align-self: flex-end;
+    animation: bounce 1s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+  
+  @keyframes attack {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+  }
+  
+  @keyframes damage {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(3); }
+    100% { filter: brightness(1); }
+  }
+  
+  @keyframes shield {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+  }
+  
+  .pokemon.attacking {
+    animation: attack 0.5s ease-in-out;
+  }
+  
+  .pokemon.damaged {
+    animation: damage 0.5s ease-in-out;
+  }
+  
+  .pokemon.shielding {
+    animation: shield 1s ease-out;
+  }
+  
+  .health-bar {
+    width: 150px;
+    height: 20px;
+    background: #111;
+    border: 3px solid #333;
+    position: relative;
+    margin-bottom: 10px;
+    box-shadow: 
+      inset 0 0 10px rgba(0, 0, 0, 0.5),
+      0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .health-bar-fill {
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      #4cd137 0%,
+      #44bd32 50%,
+      #4cd137 100%
+    );
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px #4cd137;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .health-bar-fill.warning {
+    background: linear-gradient(
+      to bottom,
+      #fbc531 0%,
+      #e1b12c 50%,
+      #fbc531 100%
+    );
+    box-shadow: 0 0 10px #fbc531;
+  }
+  
+  .health-bar-fill.danger {
+    background: linear-gradient(
+      to bottom,
+      #e84118 0%,
+      #c23616 50%,
+      #e84118 100%
+    );
+    box-shadow: 0 0 10px #e84118;
+    animation: dangerPulse 1s infinite;
+  }
+  
+  .controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    box-sizing: border-box;
+    border-top: 4px solid #fff;
+  }
+  
+  .controls button {
+    position: relative;
+    background: #000;
+    padding: 10px 15px;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+  
+  .shield-btn {
+    background: linear-gradient(45deg, #4834d4, #686de0) !important;
+    border-color: #4834d4 !important;
+  }
+  
+  .controls button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+    z-index: -1;
+  }
+  
+  .controls button:hover::before {
+    left: 100%;
+  }
+  
+  .controls button:nth-child(1) {
+    background: linear-gradient(45deg, #ffd700, #ffa500);
+    border-color: #ffd700;
+  }
+  
+  .controls button:nth-child(2) {
+    background: linear-gradient(45deg, #00ff87, #60efff);
+    border-color: #00ff87;
+  }
+  
+  .controls button:nth-child(3) {
+    background: linear-gradient(45deg, #ff3366, #ff6b6b);
+    border-color: #ff3366;
+  }
+  
+  .controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .controls button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  
+  .message-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 0;
+    font-size: 14px;
+    display: block;
+    opacity: 0;
+    pointer-events:none;
+    border: 3px solid #fff;
+    text-shadow: 
+      2px 2px #000,
+      -2px -2px #000,
+      2px -2px #000,
+      -2px 2px #000;
+    box-shadow: 
+      0 0 0 3px #000,
+      0 0 15px rgba(255, 255, 255, 0.5);
+    animation: messageAppear 0.3s ease-out;
+    z-index: 100;
+  }
+  
+  @keyframes messageAppear {
+    from {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  .message-box.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
