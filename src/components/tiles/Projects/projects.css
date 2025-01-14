@@ -32,7 +32,7 @@
 }
 
 .projects-info {
-    color: white;
+    color: rgb(139, 138, 138);
     font-family: "Source Sans 3", sans-serif;
     width: 80%;
     margin: 0rem 2rem;
@@ -64,7 +64,8 @@
     max-width: 1500px;
     height: 86vh;
     max-height: 1080px;
-    background: linear-gradient(40deg, #191919fa, #3e3e3efa);
+    background: linear-gradient(40deg, #191919be, #3e3e3ec0);
+    backdrop-filter: blur(10px);
     border-radius: 1rem;
     border: 1px solid #CACACA;
     position: relative;
@@ -157,4 +158,12 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+.projects-popup-title {
+    color: rgb(237, 237, 237);
+    font-size: 5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    padding:3rem 3rem;
 }

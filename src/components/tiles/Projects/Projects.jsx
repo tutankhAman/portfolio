@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './projects.css'
+import ProjectsPopup from './ProjectsPopup';
 
 const Projects = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -47,7 +48,8 @@ const Projects = () => {
                 <div className={`projects-popup-overlay ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
                     <div className={`projects-popup ${isClosing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
                         <button className="close-button" onClick={handleClose}>×</button>
-                        <div className='title'>My Projects</div>
+                        <div className='projects-popup-title'>My Projects</div>
+                        <ProjectsPopup />
                     </div>
                 </div>
             )}

@@ -1,0 +1,145 @@
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 3rem 3rem 3rem;
+    overflow-y: auto;
+    max-height: calc(86vh - 16rem);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(11, 11, 11, 0.562);
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+}
+
+.project-image {
+    width: 50vh;
+    height: auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.project-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-title {
+    color: #ffffff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+}
+
+.project-description {
+    color: #e0e0e0;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-description p {
+    margin: 0 0 1.5rem 0;
+}
+
+.github-link {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+    margin-top: auto;
+}
+
+.github-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar styling */
+.projects-grid::-webkit-scrollbar {
+    width: 8px;
+}
+
+.projects-grid::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.projects-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.features-title {
+    color: #ffffff;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.features-list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.features-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4a9eff;
+    font-weight: bold;
+}
+
+.feature-title {
+    color: #4a9eff;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.feature-description {
+    color: #e0e0e0;
+}
+
+.project-conclusion {
+    font-style: italic;
+    color: #cccccc;
+    border-left: 3px solid #4a9eff;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
