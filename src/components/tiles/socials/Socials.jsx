@@ -49,7 +49,7 @@ const Socials = () => {
                 <div className={`socials-popup-overlay ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
                     <div className={`socials-popup ${isClosing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
                         <button className="close-button" onClick={handleClose}>×</button>
-                        <div className='title'>Socials</div>
+                        <div className='socials-popup-title'>Socials</div>
                     </div>
                 </div>
             )}

@@ -81,14 +81,21 @@
     max-width: 1500px;
     height: 86vh;
     max-height: 1080px;
-    background: linear-gradient(120deg, #191919fa, #3e3e3efa);
+    background: url('../../../../public/images/backgrounds/cityscape.png');
+    background-size: cover;
     border-radius: 1rem;
     border: 1px solid #CACACA;
     position: relative;
     animation: expandFromSocials 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     transform-origin: var(--socials-left) var(--socials-top);
 }
-
+.socials-popup-title {
+    color: rgb(46, 46, 46);
+    font-size: 5rem;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    padding:3rem 3rem;
+}
 .socials-popup.closing {
     animation: collapseToSocials 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }

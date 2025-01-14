@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react'
+import SkillsPopup from './SkillsPopup'
 import './skillsCarousel.css'
 import './skills.css'
 
@@ -66,8 +67,8 @@ const Skills = () => {
                 <div className={`skills-popup-overlay ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
                     <div className={`skills-popup ${isClosing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
                         <button className="close-button" onClick={handleClose}>×</button>
-                        <div className='title'>Skills</div>
-                        {"hey"}
+                        <div className='skills-popup-title'>My Skills:</div>
+                        <SkillsPopup />
                     </div>
                 </div>
             )}
