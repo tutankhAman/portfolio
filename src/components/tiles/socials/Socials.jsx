@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './socials.css'
+import SocialsPopup from './SocialsPopup';
 
 const Socials = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -41,7 +42,10 @@ const Socials = () => {
                         <img className='social-logo linkedin' src="/images/logos/linkedin.png" alt="LinkedIn" />
                     </a>
                     <img className='social-logo discord' src="/images/logos/discord.png" alt="Discord" />
-                    <img className='social-logo gmail' src="/images/logos/gmail.png" alt="Gmail" />
+                    <a href="mailto:amanaziz2020@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <img className='social-logo gmail' src="/images/logos/gmail.png" alt="Gmail" />
+                    </a>
+                    
                 </div>
             </div>
 
@@ -49,7 +53,8 @@ const Socials = () => {
                 <div className={`socials-popup-overlay ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
                     <div className={`socials-popup ${isClosing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
                         <button className="close-button" onClick={handleClose}>×</button>
-                        <div className='socials-popup-title'>Socials</div>
+                        <div className='socials-popup-title'>Connect with me!</div>
+                        <SocialsPopup />
                     </div>
                 </div>
             )}

@@ -1,0 +1,113 @@
+.social-links-container {
+    padding: 2rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-item {
+    background: rgba(38, 38, 38, 0.546);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--hover-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.social-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.social-item:hover .social-icon-wrapper {
+    background: var(--hover-color);
+    transform: scale(1.1);
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.social-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.social-platform {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Lexend", sans-serif;
+}
+
+.social-username {
+    color: #888;
+    font-size: 1rem;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.visit-text {
+    color: #888;
+    font-size: 1rem;
+    font-family: 'Trocchi', sans-serif;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.social-item:hover .visit-text {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--hover-color);
+}
+
+@media (max-width: 1200px) {
+    .social-links-container {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .social-item {
+        padding: 1.5rem;
+    }
+    
+    .social-platform {
+        font-size: 1.2rem;
+    }
+    
+    .social-username {
+        font-size: 0.9rem;
+    }
+}
