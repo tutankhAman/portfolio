@@ -8,6 +8,35 @@
     display: flex; /* Make the main container a flex container */
 }
 
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .main-container {
+        width: 95vw;
+        height: auto;
+        flex-direction: column;
+        margin-top: 0.5rem;
+    }
+
+    .left-container,
+    .middle-container,
+    .right-container {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Reorder containers for mobile */
+    .middle-container {
+        order: 1;
+    }
+
+    .right-container {
+        order: 2;
+    }
+
+    .left-container {
+        order: 3;
+    }
+}
 
 .left-container {
     width: 27%; /* Set width to 27% */

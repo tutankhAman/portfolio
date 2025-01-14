@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './miniProjects.css'
+import MiniProjectsPopup from './MiniProjectsPopup';
 
 const MiniProjects = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -41,7 +42,8 @@ const MiniProjects = () => {
                 <div className={`mini-projects-popup-overlay ${isClosing ? 'closing' : ''}`} onClick={handleClose}>
                     <div className={`mini-projects-popup ${isClosing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
                         <button className="close-button" onClick={handleClose}>×</button>
-                        <div className='title'>Mini Projects</div>
+                        <div className='miniProjects-popup-title'>Mini Projects</div>
+                        <MiniProjectsPopup />
                     </div>
                 </div>
             )}

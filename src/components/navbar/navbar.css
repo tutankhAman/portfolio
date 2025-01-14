@@ -34,3 +34,14 @@
 .nav-btn:hover {
     color: #ffffff; 
 }
+
+@media (max-width: 768px) {
+    .navbar-content {
+        height: 3rem;
+        width: 90vw;
+        margin-bottom: 1rem;
+        position: fixed;
+        z-index: 10;
+    }
+
+}

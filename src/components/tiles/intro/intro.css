@@ -43,3 +43,30 @@
     right:2rem;
     bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+    .intro-container {
+        height: 300px;
+        width: 90vw;
+        margin-top: 4rem;
+    }
+
+    .hello {
+        font-size: 3rem;
+        margin: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 3rem;
+        position: static;
+        margin: 1rem;
+        transform: none;
+    }
+
+    .name {
+        font-size: 5rem;
+        position: static;
+        text-align: right;
+        margin: 1rem;
+    }
+}

@@ -242,3 +242,11 @@
     pointer-events: none;
     z-index: 2000;
 }
+
+@media (max-width: 768px) {
+    .about-container {
+        height: auto;
+        width: 90vw;
+        margin-bottom: 1rem;
+    }
+}

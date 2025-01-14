@@ -158,3 +158,18 @@
     font-weight: 700;
     padding:3rem 3rem;
 }
+
+@media (max-width: 768px) {
+    .skills {
+        height: auto;
+        width: 90vw;
+        margin-bottom: 1rem;
+    }
+    .skills-slide {
+        margin-left: 3rem;
+    }
+    .skill-logo {
+        width:5rem;
+        height:5rem;
+    }
+}
