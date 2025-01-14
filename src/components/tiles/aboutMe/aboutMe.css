@@ -68,6 +68,9 @@
     max-height: 1080px;
     background: url('/public/images/backgrounds/landscape.png');
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     border-radius: 1rem;
     border: 1px solid #CACACA;
     position: relative;
@@ -176,6 +179,10 @@
     padding: 0 3rem;
     gap: 2rem;
     justify-content: space-between;
+    flex: 1;
+    overflow-y: auto;
+    scrollbar-width:thin;
+    scrollbar-color: #333333 transparent;
 }
 
 .about-popup-left {
@@ -193,6 +200,20 @@
     flex-direction: column;
     align-items: center;
     margin-right: 4rem;
+}
+.about-popup-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.about-popup-content::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 8px 0;
+}
+
+.about-popup-content::-webkit-scrollbar-thumb {
+    background-color: #333333;
+    border-radius: 10px;
+    min-height: 30px;
 }
 
 .profile-image {
@@ -251,39 +272,45 @@
         margin-bottom: 1rem;
     }
 }
-
-/* Add to the media query section */
 @media (max-width: 768px) {
-    .about-popup {
-        width: 95vw;
-        height: 95vh;
-        margin: 0;
-    }
-
     .about-popup-title {
-        font-size: 3rem;
-        padding: 1.5rem;
+        font-size: 2.5rem;
+        padding: 1rem 1.5rem;
     }
 
     .about-popup-content {
         flex-direction: column;
-        padding: 0 1.5rem;
+        padding: 0 1.5rem 1.5rem;
+        gap: 1.5rem;
     }
 
     .about-popup-left {
+        flex: none;
         padding-left: 0;
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
     .about-popup-right {
-        margin-right: 0;
+        flex: none;
+        margin: 0 auto;
+        padding-bottom: 1rem;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 
+    .surprise-button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+
+    .profile-caption {
+        font-size: 0.8rem;
+    }
     @keyframes expandFromAbout {
         100% {
             width: 95vw;
@@ -298,6 +325,7 @@
         }
     }
 }
+/* Add to the media query section */
 @media (max-width: 1400px) {
     .about-container>.title {
         font-size: clamp(2rem, 3.5vw, 3.5rem);
