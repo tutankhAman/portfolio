@@ -1,11 +1,30 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './projects.css'
 import ProjectsPopup from './ProjectsPopup';
 
 const Projects = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
+    const [showClutterSystem, setShowClutterSystem] = useState(true);
     const projectsRef = useRef(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            // 15 inches ≈ 1440px, 14 inches ≈ 1344px
+            // Show when width < 1344px OR width >= 1440px
+            setShowClutterSystem(width < 1400 || width >= 1500);
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleClick = () => {
         const rect = projectsRef.current.getBoundingClientRect();
@@ -38,9 +57,13 @@ const Projects = () => {
                 </div>
                 <div className='projects-info'>
                     <strong>• Delivio:</strong> Reward based food delivery system with AI food recommendation.
-                    <br></br>
-                    <br></br>
-                    <strong>• Clutter-Clearing-System:</strong> A simple script to segregate files and organize your directories.
+                    {showClutterSystem && (
+                        <>
+                            <br></br>
+                            <br></br>
+                            <strong>• Clutter-Clearing-System:</strong> A simple script to segregate files and organize your directories.
+                        </>
+                    )}
                 </div>
             </div>
 
