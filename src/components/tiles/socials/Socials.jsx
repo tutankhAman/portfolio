@@ -38,7 +38,7 @@ const Socials = () => {
                     <a href="https://github.com/tutankhAman" target="_blank" rel="noopener noreferrer">
                         <img className='social-logo github' src="/images/logos/github.png" alt="GitHub" />
                     </a>
-                    <a href="https://www.linkedin.com/in/aman-aziz-23b416261/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/aman-aziz/" target="_blank" rel="noopener noreferrer">
                         <img className='social-logo linkedin' src="/images/logos/linkedin.png" alt="LinkedIn" />
                     </a>
                     <img className='social-logo discord' src="/images/logos/discord.png" alt="Discord" />
