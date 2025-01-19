@@ -14,7 +14,7 @@ const SocialsPopup = () => {
             name: 'LinkedIn', 
             username: 'Aman Aziz', 
             icon: '/images/logos/linkedin.png', 
-            link: 'https://www.linkedin.com/in/aman-aziz-23b416261/',
+            link: 'https://www.linkedin.com/in/aman-aziz/',
             color: '#0A66C2'
         },
         { 
